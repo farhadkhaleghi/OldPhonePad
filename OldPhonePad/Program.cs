@@ -27,13 +27,13 @@ namespace OldkeyPad
                 return (int)seconds;
             }
         }
-        class keyEncoder
+        class keyDecoder
         {
             private int count { get; set; } = 0;
             private int _keyCode { get; set; }
-            public keyEncoder()
+            public keyDecoder()
             { }
-            public keyEncoder(char keyCode)
+            public keyDecoder(char keyCode)
             {
                 if (keyCode == ' ')
                     _keyCode = 0;
@@ -46,7 +46,7 @@ namespace OldkeyPad
             {
                 count++;
             }
-            public char EncodeKey()
+            public char DecodeKey()
             {
                 String[] keypad = { " ", "&'(", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz", "*" };
                 if (_keyCode == 7 || _keyCode == 9)
@@ -81,30 +81,30 @@ namespace OldkeyPad
         }
         public static String OldPhonePad(string input)
         {
-            List<keyEncoder> keyEncoderList = new List<keyEncoder>();
+            List<keyDecoder> keyDecoderList = new List<keyDecoder>();
             for (int index = 0; index < input.Length; index++)
             {
                 if (input[index] == '#') break;
-                if (input[index] == '*' && keyEncoderList.Count > 0)
+                if (input[index] == '*' && keyDecoderList.Count > 0)
                 {
-                    keyEncoderList.RemoveAt(keyEncoderList.Count - 1);
+                    keyDecoderList.RemoveAt(keyDecoderList.Count - 1);
                 }
                 if (input[index] != ' ' && input[index] != '*')
                 {
                     if (index == 0 || input[index] != input[index - 1])
                     {
-                        keyEncoderList.Add(new keyEncoder(input[index]));
+                        keyDecoderList.Add(new keyDecoder(input[index]));
                     }
                     else
                     {
-                        keyEncoderList[keyEncoderList.Count - 1].AddCount();
+                        keyDecoderList[keyDecoderList.Count - 1].AddCount();
                     }
                 }
             }
             string result = string.Empty;
-            for (int index = 0; index < keyEncoderList.Count; index++)
+            for (int index = 0; index < keyDecoderList.Count; index++)
             {
-                result += keyEncoderList[index].EncodeKey();
+                result += keyDecoderList[index].DecodeKey();
             }
             return result;
         }
