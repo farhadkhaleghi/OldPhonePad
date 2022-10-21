@@ -74,7 +74,7 @@ namespace OldkeyPad
                 Keychar = Console.ReadKey().KeyChar;
                 if (string.IsNullOrEmpty(res))
                     ts.ReSet();
-                if ((ts.getTimeSpent() > 2000) && (Keychar != '#'))
+                if ((ts.getTimeSpent() > 999) && (Keychar != '#'))
                 {
                     res += ' ';
                     ts.ReSet();
@@ -112,18 +112,14 @@ namespace OldkeyPad
             {
                 result += keyEncoderList[index].EncodeKey();
             }
-            // Console.Clear();
             return result;
         }
         static void Main(string[] args)
         {
-
             string input = keypadEntry();
             Console.Clear();
             Console.WriteLine(input);
-
             Console.WriteLine(OldPhonePad(input));
-       
             Console.ReadKey();
         }
     }
