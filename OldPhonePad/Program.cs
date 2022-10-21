@@ -49,10 +49,8 @@ namespace OldkeyPad
             public char EncodeKey()
             {
                 String[] keypad = { " ", "&'(", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz", "*" };
-
                 if (_keyCode == 7 || _keyCode == 9)
                 {
-
                     count = count % 4;
                 }
                 else
@@ -61,8 +59,6 @@ namespace OldkeyPad
                 }
                 return keypad[_keyCode][count];
             }
-
-
         }
         static string keypadEntry()
         {
@@ -93,7 +89,6 @@ namespace OldkeyPad
                 {
                     keyEncoderList.RemoveAt(keyEncoderList.Count - 1);
                 }
-
                 if (input[index] != ' ' && input[index] != '*')
                 {
                     if (index == 0 || input[index] != input[index - 1])
@@ -105,7 +100,6 @@ namespace OldkeyPad
                         keyEncoderList[keyEncoderList.Count - 1].AddCount();
                     }
                 }
-
             }
             string result = string.Empty;
             for (int index = 0; index < keyEncoderList.Count; index++)
