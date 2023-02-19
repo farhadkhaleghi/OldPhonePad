@@ -10,7 +10,7 @@ namespace TestOldPhonePad
         private ProgramManagerTest _pmSt = null;
         private readonly ProgramManager.IProgramManager _pm;
         [Fact]
-        public void Test1()
+        public void OldPhonePadAndKeyDecoderClassTest()
         {
             _cmSt = new ConsoleManagerStub();
             _pmSt = new ProgramManagerTest(_cmSt);
