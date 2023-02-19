@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1831
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldPhonePad", "OldPhonePad\OldPhonePad.csproj", "{C6666FA2-C324-4CE8-8606-306B07F1CE77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestOldPhonePad", "TestOldPhonePad\TestOldPhonePad.csproj", "{02D279D0-464E-4529-B9D8-4D6FC39CB53B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C6666FA2-C324-4CE8-8606-306B07F1CE77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6666FA2-C324-4CE8-8606-306B07F1CE77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6666FA2-C324-4CE8-8606-306B07F1CE77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02D279D0-464E-4529-B9D8-4D6FC39CB53B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02D279D0-464E-4529-B9D8-4D6FC39CB53B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02D279D0-464E-4529-B9D8-4D6FC39CB53B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02D279D0-464E-4529-B9D8-4D6FC39CB53B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
